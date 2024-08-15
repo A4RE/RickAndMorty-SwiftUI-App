@@ -12,4 +12,9 @@ enum NetworkError: Error {
     case requestFailed
     case decodingError
     case unknownError
+    case serverError(String)
+}
+
+struct ServerErrorResponse: Decodable {
+    let error: String
 }

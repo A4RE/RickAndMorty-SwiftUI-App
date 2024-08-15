@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		542AE2C12C6E101C00F06C54 /* CharacterGridElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542AE2C02C6E101C00F06C54 /* CharacterGridElement.swift */; };
+		54413BD42C6E213B00EB41F3 /* ViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54413BD32C6E213B00EB41F3 /* ViewExt.swift */; };
 		54A1A16D2C6CF602004E769C /* RickAndMortyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A1A16C2C6CF602004E769C /* RickAndMortyApp.swift */; };
 		54A1A1712C6CF603004E769C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54A1A1702C6CF603004E769C /* Assets.xcassets */; };
 		54A1A1742C6CF603004E769C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54A1A1732C6CF603004E769C /* Preview Assets.xcassets */; };
@@ -31,6 +32,7 @@
 
 /* Begin PBXFileReference section */
 		542AE2C02C6E101C00F06C54 /* CharacterGridElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterGridElement.swift; sourceTree = "<group>"; };
+		54413BD32C6E213B00EB41F3 /* ViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExt.swift; sourceTree = "<group>"; };
 		54A1A1692C6CF602004E769C /* RickAndMorty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RickAndMorty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54A1A16C2C6CF602004E769C /* RickAndMortyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickAndMortyApp.swift; sourceTree = "<group>"; };
 		54A1A1702C6CF603004E769C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -64,6 +66,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		54413BD22C6E212800EB41F3 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				54413BD32C6E213B00EB41F3 /* ViewExt.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		54A1A1602C6CF602004E769C = {
 			isa = PBXGroup;
 			children = (
@@ -84,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				54A1A17A2C6CFC8D004E769C /* Services */,
+				54413BD22C6E212800EB41F3 /* Extension */,
 				54A1A18C2C6CFFAA004E769C /* Models */,
 				54A1A18B2C6CFFA6004E769C /* ViewModels */,
 				54A1A1982C6D09D9004E769C /* Components */,
@@ -260,6 +271,7 @@
 				54A1A1972C6D079E004E769C /* AppTabView.swift in Sources */,
 				54A1A19E2C6D0DC3004E769C /* LocationsView.swift in Sources */,
 				54A1A19C2C6D0DBA004E769C /* CharactersView.swift in Sources */,
+				54413BD42C6E213B00EB41F3 /* ViewExt.swift in Sources */,
 				542AE2C12C6E101C00F06C54 /* CharacterGridElement.swift in Sources */,
 				54A1A1922C6D00DB004E769C /* APIEndpoint.swift in Sources */,
 				54A1A1A22C6D0DF3004E769C /* EpisodesView.swift in Sources */,

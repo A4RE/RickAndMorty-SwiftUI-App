@@ -13,7 +13,6 @@ final class NetworkManager {
 
     private init() {}
 
-    // Original method using Endpoint
     func request<T: Decodable>(endpoint: Endpoint, method: HTTPMethod) -> AnyPublisher<T, NetworkError> {
         guard let url = endpoint.url else {
             return Fail(error: NetworkError.invalidURL).eraseToAnyPublisher()
@@ -21,23 +20,17 @@ final class NetworkManager {
         return request(url: url, method: method)
     }
 
-    // Overloaded method using a direct URL
     func request<T: Decodable>(url: URL, method: HTTPMethod) -> AnyPublisher<T, NetworkError> {
         var request = URLRequest(url: url)
         request.httpMethod = method.rawValue
 
         return URLSession.shared.dataTaskPublisher(for: request)
             .tryMap { data, response in
-                guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
-                    throw NetworkError.requestFailed
-                }
-                return data
+                try ResponseHandler.handle(data: data, response: response, error: nil).get()
             }
-            .decode(type: T.self, decoder: JSONDecoder())
             .mapError { error in
-                if let decodingError = error as? DecodingError {
-                    print("Decoding error: \(decodingError)")
-                    return NetworkError.decodingError
+                if let networkError = error as? NetworkError {
+                    return networkError
                 }
                 return NetworkError.requestFailed
             }

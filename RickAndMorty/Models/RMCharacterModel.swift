@@ -8,8 +8,9 @@
 import Foundation
 
 struct CharacterResponse: Decodable {
-    let info: Info
-    let results: [RMCharacter]
+    let info: Info?
+    let results: [RMCharacter]?
+    let error: String?
 }
 
 struct RMCharacter: Decodable, Identifiable, Equatable {
